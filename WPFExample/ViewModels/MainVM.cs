@@ -10,7 +10,7 @@ namespace WPFExample.ViewModels
     public class MainVM : ViewModel
     {
         private ObservableCollection<StudentVM> _studentList = new ObservableCollection<StudentVM>();
-        private StudentVM _currentStudent = new StudentVM("0001",0002,"0003");
+        private StudentVM _currentStudent;
         public MainVM()
         {
             _studentList.Add(new StudentVM("Mark",1,"A"));
