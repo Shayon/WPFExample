@@ -23,22 +23,39 @@ namespace WPFExample.ViewModels
                 totalGrade += assign.Grade;
                 assignTotal += assign.Total;
             }
-            if ((double)totalGrade / assignTotal >= .90)
-                Grade = "A";
-            else if ((double)totalGrade / assignTotal >= .80)
-                Grade = "B";
-            else if ((double)totalGrade / assignTotal >= .70)
-                Grade = "C";
-            else if ((double)totalGrade / assignTotal >= .60)
-                Grade = "D";
-            else if ((double)totalGrade / assignTotal >= .80)
-                Grade = "F";
-            if(Grade!="F")
+
+            double percentage = (double) totalGrade / assignTotal;
+
+            if (percentage >= .90)
             {
-                if ((double)totalGrade / assignTotal % .1 >= .07)
+                Grade = "A";
+            }
+            else if (percentage >= .80)
+            {
+                Grade = "B";
+            }
+            else if (percentage >= .70)
+            {
+                Grade = "C";
+            }
+            else if (percentage >= .60)
+            {
+                Grade = "D";
+            }
+            else if (percentage < .60)
+            {
+                Grade = "F";
+            }
+            if (Grade != "F")
+            {
+                if (percentage % .1 >= .07 || percentage >= 1)
+                {
                     Grade = Grade + "+";
-                else if ((double)totalGrade / assignTotal % .1 <= .03)
+                }
+                else if (percentage % .1 <= .03)
+                {
                     Grade = Grade + "-";
+                }
             }
         }
 
@@ -48,7 +65,7 @@ namespace WPFExample.ViewModels
             StudentName = student;
             Perm = perm;
             Grade = grade;
-            _assignmentList.Add(new AssignmentVM("sample assign", 23, 25));
+            _assignmentList.Add(new AssignmentVM("sample assign", 25, 23));
         }
 
         public string StudentName
