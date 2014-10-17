@@ -14,16 +14,21 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFExample.ViewModels;
 
-namespace WPFExample
+namespace WPFExample.Views.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for StudentSelect.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StudentSelect : UserControl
     {
-        public MainWindow()
+        public StudentSelect()
         {
             InitializeComponent();
+        }
+
+        private void ListViewItem_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainVM) this.DataContext).CurrentStudent = (StudentVM) (((ListViewItem) sender).DataContext);
         }
     }
 }

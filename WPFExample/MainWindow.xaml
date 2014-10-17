@@ -11,33 +11,26 @@
     <Window.DataContext>
         <ViewModels:MainVM x:Name="MainVM"/>
     </Window.DataContext>
-    
+
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="270" />
         </Grid.ColumnDefinitions>
-        <Grid>
-
-            <Views:SubListView ItemsSource="{Binding StudentList}" >
-                <Views:SubListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <EventSetter Event="MouseUp" Handler="ListViewItem_Click"/>
-                    </Style>
-                </Views:SubListView.ItemContainerStyle>
-                <Views:SubListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding StudentName}"/>
-                        <GridViewColumn Header="Perm" DisplayMemberBinding="{Binding Perm}"/>
-                        <GridViewColumn Header="Grade" DisplayMemberBinding="{Binding Grade, Converter={StaticResource lgc}}"/>
-                    </GridView>
-                </Views:SubListView.View>
-            </Views:SubListView>
-            
-        </Grid>
-        <Grid Grid.Column="1" DataContext="{Binding CurrentStudent}">
+        <Controls:StudentSelect/>
+    <Grid Grid.Column="1" DataContext="{Binding CurrentStudent}">
             <Grid>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding}" Value="{x:Null}">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                        <Setter Property="Visibility" Value="Visible" />
+                    </Style>
+                </Grid.Style>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
