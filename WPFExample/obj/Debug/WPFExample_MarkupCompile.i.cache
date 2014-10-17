@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\App.xaml
-2-2133844655
+3-557468397
 
-18-1158340425
+191410570372
 12-1401562060
-MainWindow.xaml;Views\Controls\AssignmentView.xaml;
+MainWindow.xaml;Views\Controls\AddAsignmentControl.xaml;Views\Controls\AssignmentView.xaml;
 
-False
+True
 

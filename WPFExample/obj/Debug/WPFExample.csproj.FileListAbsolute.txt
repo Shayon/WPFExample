@@ -14,3 +14,7 @@ c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\WPFExample.exe
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\WPFExample.pdb
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\WPFExample.csprojResolveAssemblyReference.cache
+c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\Views\Controls\AddAsignmentControl.g.cs
+c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\Views\Controls\AssignmentView.g.cs
+c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\Views\Controls\AddAsignmentControl.baml
+c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\Views\Controls\AssignmentView.baml

@@ -31,12 +31,6 @@ namespace WPFExample
             ((MainVM)this.DataContext).CurrentStudent = (StudentVM)(((ListViewItem)sender).DataContext);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AssignmentFormVM form = (AssignmentFormVM) (((Button)sender).DataContext);
-            AssignmentVM assign = new AssignmentVM(form.FormNameField, form.FormTotalField, form.FormGradeField);
-            ((MainVM)this.DataContext).CurrentStudent.AssignmentList.Add(assign);
-            ((MainVM)this.DataContext).CurrentStudent.EvaluateGrade();
-        }
+       
     }
 }
