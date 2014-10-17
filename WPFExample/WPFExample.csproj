@@ -58,6 +58,7 @@
     <Compile Include="ViewModels\MainVM.cs" />
     <Compile Include="ViewModels\StudentVM.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="Views\Converters\LetterGradeConverter.cs" />
     <Compile Include="Views\SubListView.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

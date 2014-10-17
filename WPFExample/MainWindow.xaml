@@ -32,7 +32,7 @@
                     <GridView>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding StudentName}"/>
                         <GridViewColumn Header="Perm" DisplayMemberBinding="{Binding Perm}"/>
-                        <GridViewColumn Header="Grade" DisplayMemberBinding="{Binding Grade}"/>
+                        <GridViewColumn Header="Grade" DisplayMemberBinding="{Binding Grade, Converter={StaticResource lgc}}"/>
                     </GridView>
                 </Views:SubListView.View>
             </Views:SubListView>
