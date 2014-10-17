@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="WPFExample.Views.Controls.AddAsignmentControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModels="clr-namespace:WPFExample.ViewModels"
+             xmlns:Validations="clr-namespace:WPFExample.Views.Validations"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="validationTemplate">
+            <DockPanel>
+                <TextBlock Foreground="Red" FontSize="20">!</TextBlock>
+                <AdornedElementPlaceholder/>
+            </DockPanel>
+        </ControlTemplate>
+        <Style x:Key="totalFormInError" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+        Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <StackPanel>
+        <StackPanel.DataContext>
+            <ViewModels:AssignmentFormVM />
+        </StackPanel.DataContext>
+        <TextBox Text="{Binding FormNameField}" />
+        <TextBox Text="{Binding FormGradeField}" />
+        <TextBox Validation.ErrorTemplate="{StaticResource validationTemplate}"
+                             Style="{StaticResource totalFormInError}"
+                             x:Name="TotalFieldTextBox">
+            <TextBox.Text>
+                <Binding Path="FormTotalField" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <Validations:AssignmentTotalValidation />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Button Click="Button_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=TotalFieldTextBox, Path=(Validation.HasError)}" Value="False">
+                            <Setter Property="IsEnabled" Value="True" />
+                        </DataTrigger>
+                    </Style.Triggers>
+
+                    <Setter Property="IsEnabled" Value="False" />
+                </Style>
+            </Button.Style>
+            Add Assignment
+        </Button>
+    </StackPanel>
+</UserControl>
