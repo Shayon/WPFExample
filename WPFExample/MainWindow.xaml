@@ -5,10 +5,28 @@
         Title="MainWindow" Height="350" Width="525"
         xmlns:ViewModels="clr-namespace:WPFExample.ViewModels"
         xmlns:Views="clr-namespace:WPFExample.Views"
+        xmlns:Validations="clr-namespace:WPFExample.Views.Validations"
         >
     <Window.DataContext>
         <ViewModels:MainVM x:Name="MainVM"/>
     </Window.DataContext>
+    <Window.Resources>
+        <ControlTemplate x:Key="validationTemplate">
+            <DockPanel>
+                <TextBlock Foreground="Red" FontSize="20">!</TextBlock>
+                <AdornedElementPlaceholder/>
+            </DockPanel>
+        </ControlTemplate>
+        <Style x:Key="totalFormInError" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+        Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -21,7 +39,7 @@
             <TextBox Text="World!" />
         </StackPanel>
         <Grid Grid.Column="1">
-            
+
             <Views:SubListView ItemsSource="{Binding StudentList}" >
                 <Views:SubListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
@@ -32,7 +50,7 @@
                     <GridView>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding StudentName}"/>
                         <GridViewColumn Header="Perm" DisplayMemberBinding="{Binding Perm}"/>
-                        <GridViewColumn Header="Grade" DisplayMemberBinding="{Binding Grade}"/>
+                        <GridViewColumn Header="Grade" DisplayMemberBinding="{Binding Grade, Converter={StaticResource lgc}}"/>
                     </GridView>
                 </Views:SubListView.View>
             </Views:SubListView>
@@ -43,17 +61,17 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-            <Views:SubListView ItemsSource="{Binding AssignmentList}" >
-                <Views:SubListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Assignment" DisplayMemberBinding="{Binding Name}"/>
-                        <GridViewColumn Header="Grade" DisplayMemberBinding="{Binding Grade}"/>
-                        <GridViewColumn Header="Total" DisplayMemberBinding="{Binding Total}"/>
-                    </GridView>
-                </Views:SubListView.View>
-            </Views:SubListView>
-            
-            <!--<Grid>
+                <Views:SubListView ItemsSource="{Binding AssignmentList}" >
+                    <Views:SubListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Assignment" DisplayMemberBinding="{Binding Name}"/>
+                            <GridViewColumn Header="Grade" DisplayMemberBinding="{Binding Grade}"/>
+                            <GridViewColumn Header="Total" DisplayMemberBinding="{Binding Total}"/>
+                        </GridView>
+                    </Views:SubListView.View>
+                </Views:SubListView>
+
+                <!--<Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="Auto"/>
@@ -67,15 +85,37 @@
                 <TextBox Grid.Column="1" Grid.Row="1"/>
                 <TextBox Grid.Column="2" Grid.Row="1"/>
             </Grid>-->
-            <StackPanel Grid.Row="1">
-                <StackPanel.DataContext>
-                    <ViewModels:AssignmentFormVM />
-                </StackPanel.DataContext>
-                <TextBox Text="{Binding FormNameField}" />
-                <TextBox Text="{Binding FormGradeField}" />
-                <TextBox Text="{Binding FormTotalField}" />
-                <Button Click="Button_Click">Add Assignment</Button>
-            </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <StackPanel.DataContext>
+                        <ViewModels:AssignmentFormVM />
+                    </StackPanel.DataContext>
+                    <TextBox Text="{Binding FormNameField}" />
+                    <TextBox Text="{Binding FormGradeField}" />
+                    <TextBox Validation.ErrorTemplate="{StaticResource validationTemplate}"
+                             Style="{StaticResource totalFormInError}"
+                             x:Name="TotalFieldTextBox">
+                        <TextBox.Text>
+                            <Binding Path="FormTotalField" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <Validations:AssignmentTotalValidation />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <Button Click="Button_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=TotalFieldTextBox, Path=(Validation.HasError)}" Value="False">
+                                        <Setter Property="IsEnabled" Value="True" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                                <Setter Property="IsEnabled" Value="False" />
+                            </Style>
+                        </Button.Style>
+                        Add Assignment
+                    </Button>
+                </StackPanel>
             </Grid>
         </Grid>
     </Grid>

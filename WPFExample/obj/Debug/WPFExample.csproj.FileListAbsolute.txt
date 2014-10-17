@@ -1,11 +1,12 @@
-c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\bin\Debug\WPFExample.exe.config
-c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\bin\Debug\WPFExample.exe
-c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\bin\Debug\WPFExample.pdb
-c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\MainWindow.g.cs
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\App.g.cs
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\GeneratedInternalTypeHelper.g.cs
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\WPFExample_MarkupCompile.cache
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\WPFExample_MarkupCompile.lref
+c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\bin\Debug\WPFExample.exe.config
+c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\bin\Debug\WPFExample.exe
+c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\bin\Debug\WPFExample.pdb
+c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\MainWindow.g.cs
+c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\App.baml
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\MainWindow.baml
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\WPFExample.g.resources
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\WPFExample.Properties.Resources.resources

@@ -11,7 +11,7 @@ namespace WPFExample.ViewModels
     {
         private string _studentName;
         private int _perm;
-        private string _grade;
+        private double _grade;
         private ObservableCollection<AssignmentVM> _assignmentList = new ObservableCollection<AssignmentVM>();
 
         public void EvaluateGrade()
@@ -24,43 +24,11 @@ namespace WPFExample.ViewModels
                 assignTotal += assign.Total;
             }
 
-            double percentage = (double) totalGrade / assignTotal;
-
-            if (percentage >= .90)
-            {
-                Grade = "A";
-            }
-            else if (percentage >= .80)
-            {
-                Grade = "B";
-            }
-            else if (percentage >= .70)
-            {
-                Grade = "C";
-            }
-            else if (percentage >= .60)
-            {
-                Grade = "D";
-            }
-            else if (percentage < .60)
-            {
-                Grade = "F";
-            }
-            if (Grade != "F")
-            {
-                if (percentage % .1 >= .07 || percentage >= 1)
-                {
-                    Grade = Grade + "+";
-                }
-                else if (percentage % .1 <= .03)
-                {
-                    Grade = Grade + "-";
-                }
-            }
+            Grade = (double) totalGrade / assignTotal;
         }
 
 
-        public StudentVM(string student, int perm, string grade)
+        public StudentVM(string student, int perm, double grade)
         {
             StudentName = student;
             Perm = perm;
@@ -90,7 +58,7 @@ namespace WPFExample.ViewModels
             }
         }
 
-        public string Grade
+        public double Grade
         {
             get { return _grade; }
 

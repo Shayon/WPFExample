@@ -13,9 +13,9 @@ namespace WPFExample.ViewModels
         private StudentVM _currentStudent;
         public MainVM()
         {
-            _studentList.Add(new StudentVM("Mark",1,"A"));
-            _studentList.Add(new StudentVM("Steve",2,"B+"));
-            _studentList.Add(new StudentVM("Lewis", 3, "D-"));
+            _studentList.Add(new StudentVM("Mark",1,.95));
+            _studentList.Add(new StudentVM("Steve",2,.88));
+            _studentList.Add(new StudentVM("Lewis", 3, .63));
         }
 
         public StudentVM CurrentStudent
