@@ -29,19 +29,29 @@
         <StackPanel.DataContext>
             <ViewModels:AssignmentFormVM />
         </StackPanel.DataContext>
-        <TextBox Text="{Binding FormNameField}" />
-        <TextBox Text="{Binding FormGradeField}" />
-        <TextBox Validation.ErrorTemplate="{StaticResource validationTemplate}"
+        <StackPanel Orientation="Horizontal">
+            <Label Width="130">Assignment Name:</Label>
+            <TextBox Width="130" Text="{Binding FormNameField}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Width="130">Grade</Label>
+            <TextBox Width="130" Text="{Binding FormGradeField}" />  
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" >
+            <Label Width="130">Total</Label>
+            <TextBox Width="130" Validation.ErrorTemplate="{StaticResource validationTemplate}"
                              Style="{StaticResource totalFormInError}"
                              x:Name="TotalFieldTextBox">
-            <TextBox.Text>
-                <Binding Path="FormTotalField" UpdateSourceTrigger="PropertyChanged">
-                    <Binding.ValidationRules>
-                        <Validations:AssignmentTotalValidation />
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
+                <TextBox.Text>
+                    <Binding Path="FormTotalField" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <Validations:AssignmentTotalValidation />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        
         <Button Click="Button_Click">
             <Button.Style>
                 <Style TargetType="Button">

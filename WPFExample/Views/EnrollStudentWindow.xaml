@@ -1,0 +1,19 @@
+﻿<Window x:Class="WPFExample.Views.EnrollStudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Enroll a Student" Height="150" Width="300">
+    <Grid>
+        <StackPanel>
+            <StackPanel Margin="5 5 5 5" Orientation="Horizontal">
+                <Label Width="130">Student Name:</Label>
+                <TextBox Width="130" Text="" />
+            </StackPanel>
+            <StackPanel Margin="5 5 5 5" Orientation="Horizontal">
+                <Label Width="130">Student Perm:</Label>
+                <TextBox Width="130" Text="" />
+            </StackPanel>
+            <Button Margin="5 5 5 5">Enroll Student</Button>
+        </StackPanel>
+        
+    </Grid>
+</Window>

@@ -18,7 +18,15 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="270" />
         </Grid.ColumnDefinitions>
-        <Controls:StudentSelect/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="590"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Controls:StudentSelect/>
+            <Button Margin="5 5 5 5" Height="25" Click="EnrollButton_Click" >Enroll a Student</Button>
+        </Grid>
+        
     <Grid Grid.Column="1" DataContext="{Binding CurrentStudent}">
             <Grid>
                 <Grid.Style>

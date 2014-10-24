@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\
+C:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\
 WPFExample
 none
 false
 DEBUG;TRACE
-c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\App.xaml
-4-1314671572
+C:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\App.xaml
+5637061145
 
-20-1354963573
+211978487214
 12-1401562060
-MainWindow.xaml;Views\Controls\AddAsignmentControl.xaml;Views\Controls\AssignmentView.xaml;Views\Controls\StudentSelect.xaml;
+MainWindow.xaml;Views\Controls\AddAsignmentControl.xaml;Views\Controls\AssignmentView.xaml;Views\Controls\StudentSelect.xaml;Views\EnrollStudentWindow.xaml;
 
-True
+False
 

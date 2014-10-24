@@ -68,6 +68,9 @@
       <DependentUpon>StudentSelect.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Converters\LetterGradeConverter.cs" />
+    <Compile Include="Views\EnrollStudentWindow.xaml.cs">
+      <DependentUpon>EnrollStudentWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SubListView.cs" />
     <Compile Include="Views\Validations\AssignmentTotalValidation.cs" />
     <Page Include="MainWindow.xaml">
@@ -91,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Controls\StudentSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EnrollStudentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

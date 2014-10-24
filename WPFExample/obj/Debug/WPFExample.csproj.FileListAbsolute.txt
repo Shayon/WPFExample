@@ -19,3 +19,6 @@ c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\WPFExample.csproj.GenerateResource.Cache
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\WPFExample.exe
 c:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\WPFExample.pdb
+C:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\WPFExample.csprojResolveAssemblyReference.cache
+C:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\Views\EnrollStudentWindow.baml
+C:\Users\Shayon\Documents\Visual Studio 2013\Projects\WPFExample\WPFExample\obj\Debug\Views\EnrollStudentWindow.g.cs

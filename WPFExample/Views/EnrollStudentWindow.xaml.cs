@@ -10,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPFExample.ViewModels;
-using WPFExample.Views;
 
-namespace WPFExample
+namespace WPFExample.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for EnrollStudentWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EnrollStudentWindow : Window
     {
-        public MainWindow()
+        public EnrollStudentWindow()
         {
             InitializeComponent();
-        }
-
-        private void EnrollButton_Click(object sender, RoutedEventArgs e)
-        {
-            var newWindow = new EnrollStudentWindow();
-            newWindow.Show();
         }
     }
 }
